@@ -15,6 +15,8 @@ A beautiful, customizable Progressive Web App for managing todos and tracking da
 - 🌐 **Self-Hostable** - Own your data, deploy anywhere
 
 ## 🖼️ Screenshots
+![preview_1](./public/assets/images/preview_1.png)
+![preview_1](./public/assets/images/preview_2.png)
 
 ## 🚀 Quick Start
 
