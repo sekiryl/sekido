@@ -1,0 +1,15 @@
+-- TODOS
+CREATE TABLE IF NOT EXISTS todos (
+  id INTEGER PRIMARY KEY AUTOINCREMENT,
+  text TEXT NOT NULL,
+  completed BOOLEAN DEFAULT false,
+  position INTEGER DEFAULT 0
+);
+
+-- HABITS
+CREATE TABLE IF NOT EXISTS habits (
+  id INTEGER PRIMARY KEY,
+  streak INTEGER DEFAULT 0,
+  lastCompleted TEXT,
+  lastChecked TEXT
+);
