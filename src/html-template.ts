@@ -31,7 +31,7 @@ export function generateHTML(): string {
             theme: {
                 extend: {
                     fontFamily: {
-                        sans: ['Rubik', 'sans-serif'],
+                        sans: ['${config.font === "default" ? "Rubik" : config.font}', 'sans-serif'],
                     },
                     colors: ${JSON.stringify(theme.colors, null, 24)}
                 }
