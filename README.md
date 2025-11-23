@@ -171,7 +171,8 @@ theme: "sekiratte",
 accent: "peach",
 
 // Logo configuration:
-// "default" = use built-in logo, "" = no logo, "path/to/image.png" = custom logo
+// "default" = use built-in logo, "" = no logo, "custom" = use /icon.png
+// Place your custom icon at public/icon.png when using "custom"
 // Used for header logo, favicon, and PWA icon
 logo: "default",
 

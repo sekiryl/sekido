@@ -18,11 +18,11 @@ export function generateHTML(): string {
         '<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;700&display=swap">' :
         `<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=${encodeURIComponent(config.font)}:wght@300;400;500;600;700&display=swap">`
     }
-    <link rel="apple-touch-icon" sizes="180x180" href="${config.logo === "default" ? "./assets/favicon/apple-touch-icon.png" : config.logo}">
-    <link rel="icon" type="image/png" sizes="32x32" href="${config.logo === "default" ? "./assets/favicon/favicon-32x32.png" : config.logo}">
-    <link rel="icon" type="image/png" sizes="16x16" href="${config.logo === "default" ? "./assets/favicon/favicon-16x16.png" : config.logo}">
-    <link rel="manifest" href="./assets/favicon/site.webmanifest">
-    <link rel="shortcut icon" href="${config.logo === "default" ? "./assets/favicon/favicon.ico" : config.logo}">
+    <link rel="apple-touch-icon" sizes="180x180" href="${config.logo === "default" ? "./assets/favicon/apple-touch-icon.png" : config.logo === "custom" ? "./icon.png" : "./assets/favicon/apple-touch-icon.png"}">
+    <link rel="icon" type="image/png" sizes="32x32" href="${config.logo === "default" ? "./assets/favicon/favicon-32x32.png" : config.logo === "custom" ? "./icon.png" : "./assets/favicon/favicon-32x32.png"}">
+    <link rel="icon" type="image/png" sizes="16x16" href="${config.logo === "default" ? "./assets/favicon/favicon-16x16.png" : config.logo === "custom" ? "./icon.png" : "./assets/favicon/favicon-16x16.png"}">
+    <link rel="manifest" href="./manifest.json">
+    <link rel="shortcut icon" href="${config.logo === "default" ? "./assets/favicon/favicon.ico" : config.logo === "custom" ? "./icon.png" : "./assets/favicon/favicon.ico"}">
     <meta name="msapplication-TileColor" content="${accentColor}">
     <meta name="msapplication-config" content="./assets/favicon/browserconfig.xml">
     <meta name="theme-color" content="${theme.colors.base}">
@@ -220,7 +220,7 @@ export function generateHTML(): string {
         <header class="text-center mb-12">
             <div class="flex items-center justify-center mb-4">
                 ${config.logo === "default" ? '<img src="./assets/logo.png" alt="Logo" class="h-32 w-32 mr-4 rounded-full">' : 
-                  config.logo !== "" ? `<img src="${config.logo}" alt="Logo" class="h-32 w-32 mr-4 rounded-full">` : ''}
+                  config.logo === "custom" ? '<img src="./icon.png" alt="Logo" class="h-32 w-32 mr-4 rounded-full">' : ''}
                 <h1 class="text-4xl md:text-5xl font-bold text-${config.accent}">${config.title}</h1>
             </div>
             ${config.quote === "default" ? '<p class="text-subtext0 max-w-lg mx-auto">"迷えば、敗れる…" </br>       -Isshin Ashina</p>' :

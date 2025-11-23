@@ -68,7 +68,7 @@ export default {
     }
 
     // Serve dynamic manifest
-    if (path === "/assets/favicon/site.webmanifest") {
+    if (path === "/manifest.json") {
       const config = DEFAULT_CONFIG;
       const theme = THEMES[config.theme] || THEMES.sekiratte;
       
@@ -92,14 +92,14 @@ export default {
             type: "image/png",
             purpose: "any maskable"
           }
-        ] : config.logo !== "" ? [
+        ] : config.logo === "custom" ? [
           {
-            src: config.logo,
+            src: "./icon.png",
             sizes: "192x192",
             type: "image/png"
           },
           {
-            src: config.logo,
+            src: "./icon.png",
             sizes: "512x512",
             type: "image/png",
             purpose: "any maskable"
