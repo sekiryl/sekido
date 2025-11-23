@@ -479,5 +479,35 @@ export const THEMES: Record<string, Theme> = {
       teal: "#00ffcc",
       sky: "#03d8f3"
     }
+  },
+  hacker: {
+    name: "Hacker",
+    colors: {
+      base: "#000000",
+      mantle: "#0a0a0a",
+      crust: "#050505",
+      text: "#00ff00",
+      subtext1: "#00dd00",
+      subtext0: "#00bb00",
+      overlay2: "#009900",
+      overlay1: "#007700",
+      overlay0: "#005500",
+      surface2: "#1a1a1a",
+      surface1: "#111111",
+      surface0: "#0a0a0a",
+      red: "#ff0000",
+      maroon: "#cc0000",
+      green: "#00ff00",
+      peach: "#ffaa00",
+      blue: "#0088ff",
+      lavender: "#aa88ff",
+      yellow: "#ffff00",
+      rosewater: "#00ff00",
+      flamingo: "#ff0000",
+      pink: "#ff00aa",
+      mauve: "#aa88ff",
+      teal: "#00ffaa",
+      sky: "#0088ff"
+    }
   }
 };

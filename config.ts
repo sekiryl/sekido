@@ -33,7 +33,7 @@ export const DEFAULT_CONFIG: AppConfig = {
   // Theme name - Available themes in ./src/themes.ts:
   // sekiratte, catppuccin_mocha, nord, gruvbox_dark, gruvbox_light, tokyo_night,
   // dracula, one_dark, solarized_dark, solarized_light, catppuccin_latte,
-  // catppuccin_frappe, catppuccin_macchiato, vaporwave, cyberpunk
+  // catppuccin_frappe, catppuccin_macchiato, vaporwave, cyberpunk, hacker
   theme: "sekiratte",
   
   // Accent color from your theme's color palette
