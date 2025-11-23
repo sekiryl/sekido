@@ -27,16 +27,16 @@ A beautiful, customizable Progressive Web App for managing todos and tracking da
 
 - **Node.js** 18+ 
 - **Cloudflare Account** (free tier works)
-- **Wrangler CLI**: `npm install -g wrangler`
+- **Wrangler CLI**: `# npm install -g wrangler`
 
 ### Installation
 
 1. **Clone the repository**
    
    ```bash
-   git clone https://github.com/sekiryl/sekido.git
-   cd sekido
-   npm install
+   $ git clone https://github.com/sekiryl/sekido.git
+   $ cd sekido
+   $ npm install
    ```
 
 2. **Configure your app**
@@ -62,7 +62,7 @@ A beautiful, customizable Progressive Web App for managing todos and tracking da
    
    # Create Cloudflare D1 database
    $ wrangler d1 create sekido-db
-   
+   > press 'n' if you are prompted with "Would you like wrangler to add it on your behalf"
    # Update wrangler.jsonc with your database ID
    # Replace "YOUR_DATABASE_ID_HERE" with the ID from the create command
    
@@ -74,16 +74,17 @@ A beautiful, customizable Progressive Web App for managing todos and tracking da
    
    ```bash
    # Set your app password
-   wrangler secret put PASS
-   
+   $ wrangler secret put PASS
+   > press 'y' if you are prompted to create a new worker
+
    # Optional: Set cron secret for automated tasks
-   wrangler secret put CRON_SECRET
+   $ wrangler secret put CRON_SECRET
    ```
 
 5. **Deploy**
    
    ```bash
-   wrangler deploy
+   $ wrangler deploy
    ```
 
 Your Sekido app is now live! 🎉
