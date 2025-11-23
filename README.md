@@ -5,6 +5,25 @@
 
 A beautiful, customizable Progressive Web App for managing todos and tracking daily habits. Built with Cloudflare Workers and D1 database for lightning-fast performance and easy self-hosting.
 
+## 📋 Table of Contents
+
+- [✨ Features](#-features)
+- [🖼️ Screenshots](#️-screenshots)
+- [🚀 Quick Start](#-quick-start)
+- [🔄 Updating Sekido](#-updating-sekido)
+- [🌐 Custom Domain Setup](#-custom-domain-setup)
+- [⚙️ Configuration](#️-configuration)
+- [📱 PWA Configuration](#-pwa-configuration)
+- [🤖 Automation & Cron Jobs](#-automation--cron-jobs)
+- [🔧 Development](#-development)
+- [📋 API Reference](#-api-reference)
+- [🎯 Use Cases](#-use-cases)
+- [🛠️ Tech Stack](#️-tech-stack)
+- [🤝 Contributing](#-contributing)
+- [📄 License](#-license)
+- [📜 Acknowledgments](#-acknowledgments)
+- [💬 Support](#-support)
+
 ## ✨ Features
 
 - 📝 **Smart Todo Management** - Create, reorder, and manage tasks with drag-and-drop
@@ -88,6 +107,28 @@ A beautiful, customizable Progressive Web App for managing todos and tracking da
    ```
 
 Your Sekido app is now live! 🎉
+
+## 🔄 Updating Sekido
+
+To get the latest features and deploy config changes:
+
+```bash
+# Run the update script
+./update.sh
+```
+
+This will:
+- Pull latest features from upstream
+- Preserve your local config.ts changes  
+- Deploy the updated app to Cloudflare
+
+**Manual Update (Alternative):**
+```bash
+git stash
+git pull origin main
+git stash pop
+wrangler deploy
+```
 
 ## 🌐 Custom Domain Setup
 
