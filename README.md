@@ -1,4 +1,7 @@
-# Sekido: Self-Hosted Productivity PWA
+<h1 align="center">
+	<img src="./public/assets/logo.png" width="100" alt="Logo"/></br>
+	Sekido
+</h1>
 
 A beautiful, customizable Progressive Web App for managing todos and tracking daily habits. Built with Cloudflare Workers and D1 database for lightning-fast performance and easy self-hosting.
 
@@ -97,22 +100,12 @@ Your Sekido app is now live! 🎉
 
 2. **Configure Worker Route**
    
-   - Navigate to **Workers & Pages** → **Overview**
+   - Navigate to **Workers & Pages**
    - Find your deployed Sekido worker
-   - Click **Settings** → **Triggers**
-   - Click **Add Custom Domain**
+   - Click **Settings**
+   - Click **Add Custom Domain** in **Domains & Routes** section
    - Enter your domain (e.g., `todo.yourdomain.com`)
    - Click **Add Custom Domain**
-
-### Alternative: Using Wrangler CLI
-
-```bash
-# Add custom domain via CLI
-wrangler domains add todo.yourdomain.com
-
-# List configured domains
-wrangler domains list
-```
 
 > [!NOTE]
 > Custom domains require a Cloudflare account with the domain added to it. Free tier supports custom domains!
