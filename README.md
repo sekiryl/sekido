@@ -75,13 +75,14 @@ A beautiful, customizable Progressive Web App for managing todos and tracking da
 
 3. **Set up the database**
    
-   ```bash
+   ```
    # Login to Cloudflare
    $ wrangler login
    
    # Create Cloudflare D1 database
    $ wrangler d1 create sekido-db
    > press 'n' if you are prompted with "Would you like wrangler to add it on your behalf"
+
    # Update wrangler.jsonc with your database ID
    # Replace "YOUR_DATABASE_ID_HERE" with the ID from the create command
    
@@ -91,7 +92,7 @@ A beautiful, customizable Progressive Web App for managing todos and tracking da
 
 4. **Configure authentication**
    
-   ```bash
+   ```
    # Set your app password
    $ wrangler secret put PASS
    > press 'y' if you are prompted to create a new worker
@@ -102,7 +103,7 @@ A beautiful, customizable Progressive Web App for managing todos and tracking da
 
 5. **Deploy**
    
-   ```bash
+   ```
    $ wrangler deploy
    ```
 
@@ -112,9 +113,9 @@ Your Sekido app is now live! 🎉
 
 To get the latest features and deploy config changes:
 
-```bash
+```
 # Run the update script
-./update.sh
+$ ./update.sh
 ```
 
 This will:
@@ -123,11 +124,11 @@ This will:
 - Deploy the updated app to Cloudflare
 
 **Manual Update (Alternative):**
-```bash
-git stash
-git pull origin main
-git stash pop
-wrangler deploy
+```
+$ git stash
+$ git pull origin main
+$ git stash pop
+$ wrangler deploy
 ```
 
 ## 🌐 Custom Domain Setup
@@ -398,7 +399,7 @@ wrangler d1 execute sekido-db --command "SELECT * FROM todos"
 1. Fork the repository
 2. Create a feature branch: `git checkout -b feature-name`
 3. Make your changes and test thoroughly
-4. Commit with clear messages: `git commit -am 'Add feature'`
+4. [Conventional Commit](https://www.conventionalcommits.org): `git commit -am '<type>[optional scope]: <description>'`
 5. Push to your branch: `git push origin feature-name`
 6. Submit a Pull Request
 
@@ -409,6 +410,7 @@ wrangler d1 execute sekido-db --command "SELECT * FROM todos"
 - Ensure mobile responsiveness
 - Follow existing code style
 - Update documentation for new features
+- Follow [Conventional Commits](https://www.conventionalcommits.org) specifications.
 
 ## 📄 License
 
