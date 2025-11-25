@@ -296,10 +296,10 @@ export function generateHTML(): string {
             }).join('')}
         </div>
         
-        <footer class="mt-12 text-center text-subtext0 text-sm">
+        ${config.showAttribution ? `<footer class="mt-12 text-center text-subtext0 text-sm">
             <p>Sekido - Licensed under <a href="https://www.gnu.org/licenses/gpl-3.0.html" target="_blank" class="text-${config.accent} hover:underline">GNU GPLv3</a></p>
             <p class="mt-1">Made with ❤️ by <a href="https://github.com/sekiryl" target="_blank" class="text-${config.accent} hover:underline">sekiryl</a></p>
-        </footer>
+        </footer>` : ''}
     </div>
     <script src="https://cdn.jsdelivr.net/npm/sortablejs@1.15.0/Sortable.min.js"></script>
     <script>

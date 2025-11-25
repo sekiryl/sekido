@@ -257,7 +257,11 @@ habits: [
   { id: 1, name: "Exercise", icon: "fitness_center", color: "red" },
   { id: 2, name: "Read", icon: "book", color: "blue" },
   { id: 3, name: "Meditate", icon: "self_improvement", color: "green" },
-]
+],
+
+// Show license and attribution footer
+// true = show footer, false = hide footer
+showAttribution: true
 ```
 
 ### 📱 PWA Configuration
