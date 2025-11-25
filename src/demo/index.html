@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sekido Demo</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;700&display=swap">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Rubik', 'sans-serif'],
+                    },
+                    colors: {
+                        base: "#231e1c",
+                        mantle: "#1a1614",
+                        crust: "#0f0d0c",
+                        text: "#e3d8c9",
+                        subtext1: "#c5b7a3",
+                        subtext0: "#a09585",
+                        overlay2: "#7a6e64",
+                        overlay1: "#5a5149",
+                        overlay0: "#3a3530",
+                        surface2: "#402f28",
+                        surface1: "#352c26",
+                        surface0: "#2a231e",
+                        red: "#9a2a2a",
+                        maroon: "#6d1e1e",
+                        green: "#5c7c46",
+                        peach: "#d4875d",
+                        blue: "#3a5a7a",
+                        lavender: "#7a6a9a",
+                        yellow: "#d4af37",
+                        rosewater: "#e7c8a9",
+                        flamingo: "#c96d6d",
+                        pink: "#b26888",
+                        mauve: "#8a6a9a",
+                        teal: "#4a8a8a",
+                        sky: "#6a9aaa"
+                    }
+                }
+            }
+        }
+    </script>
+    <style type="text/tailwindcss">
+        @layer base {
+            body {
+                background: theme('colors.base');
+                color: theme('colors.text');
+                min-height: 100vh;
+                font-family: 'Rubik', sans-serif;
+            }
+            
+            .card {
+                background: theme('colors.surface0');
+                border-radius: 16px;
+                box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+            }
+            
+            .btn {
+                transition: all 0.3s ease;
+            }
+            
+            .btn:hover {
+                transform: scale(1.01);
+                box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+            }
+            
+            .btn:active {
+                transform: scale(0.99);
+            }
+            
+            .habit-item:hover {
+                transform: scale(1.01);
+            }
+            
+            .completed {
+                opacity: 0.7;
+            }
+
+            .todo-text {
+              text-decoration: line-through;
+              text-decoration-color: transparent;
+              text-decoration-thickness: 1px;
+              text-decoration-skip-ink: none;
+              transition: none;
+            }
+
+            li.completed .todo-text {
+              text-decoration-color: currentColor;
+            }
+
+            li.just-completed .todo-text {
+              animation: strike-decoration 0.5s ease forwards;
+            }
+
+            @keyframes strike-decoration {
+              from { text-decoration-color: transparent; }
+              to   { text-decoration-color: currentColor; }
+            }
+            
+            .pulse {
+                animation: pulse 2s infinite;
+            }
+            
+            @keyframes pulse {
+                0% { box-shadow: 0 0 0 0 rgba(212, 135, 93, 0.7); }
+                70% { box-shadow: 0 0 0 10px rgba(212, 135, 93, 0); }
+                100% { box-shadow: 0 0 0 0 rgba(212, 135, 93, 0); }
+            }
+
+            .drag-handle {
+              cursor: move;
+              transition: opacity 0.2s ease;
+              display: flex;
+              justify-content: center;
+            }
+
+            .drag-handle:hover {
+              opacity: 1 !important;
+              color: theme('colors.peach');
+            }
+
+            .sortable-chosen {
+              background-color: theme('colors.surface2');
+            }
+
+            .sortable-ghost {
+              opacity: 0.5;
+            }
+            
+            .material-symbols-rounded {
+                font-variation-settings:
+                'FILL' 0,
+                'wght' 400,
+                'GRAD' 200,
+                'opsz' 24
+            }
+            .custom-checkbox {
+                position: relative;
+                -webkit-appearance: none;
+                -moz-appearance: none;
+                appearance: none;
+                min-width: 1.25rem;
+                min-height: 1.25rem;
+                width: 1.25rem;
+                height: 1.25rem;
+                border: 2px solid theme('colors.overlay0');
+                border-radius: 50%;
+                background: theme('colors.surface1');
+                cursor: pointer;
+                transition: all 0.2s ease;
+                flex-shrink: 0;
+            }
+            
+            .custom-checkbox:checked {
+                background: theme('colors.peach');
+                border-color: theme('colors.peach');
+            }
+            
+            .custom-checkbox:checked::after {
+                content: '';
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%) rotate(45deg);
+                width: 4px;
+                height: 8px;
+                border: solid theme('colors.surface1');
+                border-width: 0 2px 2px 0;
+            }
+            
+            .custom-checkbox:hover {
+                border-color: theme('colors.peach');
+                transform: scale(1.05);
+            }
+            
+            .custom-checkbox:focus {
+                outline: none;
+                box-shadow: 0 0 0 3px theme('colors.peach / 30%');
+            }
+            .todo-item-text {
+                word-break: break-word;
+                min-width: 0;
+            }
+            #progressFill {
+                width: 100%;
+            }
+            #progressGradient {
+                transition: transform 0.5s ease;
+            }
+            @media (hover: none) {
+                .habit-item:hover {
+                    transform: none !important;
+                }
+                
+                .btn:hover {
+                    transform: none !important;
+                    box-shadow: none !important;
+                }
+            }
+        }
+    </style>
+</head>
+<body class="font-sans bg-base text-text min-h-screen">
+    <div id="appContent" class="container mx-auto px-4 py-8 max-w-4xl">
+        <div class="flex justify-end mb-4 space-x-3">
+            <select id="themeSelector" class="bg-surface1 border border-overlay0 rounded-lg px-3 py-2 text-text focus:outline-none focus:ring-2 focus:ring-peach">
+                <option value="sekiratte">Sekiratte</option>
+                <option value="catppuccin_mocha">Catppuccin Mocha</option>
+                <option value="nord">Nord</option>
+                <option value="gruvbox_dark">Gruvbox Dark</option>
+                <option value="gruvbox_light">Gruvbox Light</option>
+                <option value="tokyo_night">Tokyo Night</option>
+                <option value="dracula">Dracula</option>
+                <option value="one_dark">One Dark</option>
+                <option value="solarized_dark">Solarized Dark</option>
+                <option value="solarized_light">Solarized Light</option>
+                <option value="catppuccin_latte">Catppuccin Latte</option>
+                <option value="catppuccin_frappe">Catppuccin Frappé</option>
+                <option value="catppuccin_macchiato">Catppuccin Macchiato</option>
+                <option value="vaporwave">Vaporwave</option>
+                <option value="cyberpunk">Cyberpunk</option>
+                <option value="hacker">Hacker</option>
+            </select>
+            <select id="accentSelector" class="bg-surface1 border border-overlay0 rounded-lg px-3 py-2 text-text focus:outline-none focus:ring-2 focus:ring-peach">
+                <option value="peach">Peach</option>
+                <option value="red">Red</option>
+                <option value="green">Green</option>
+                <option value="blue">Blue</option>
+                <option value="yellow">Yellow</option>
+                <option value="purple">Purple</option>
+                <option value="pink">Pink</option>
+                <option value="teal">Teal</option>
+                <option value="orange">Orange</option>
+                <option value="mauve">Mauve</option>
+                <option value="lavender">Lavender</option>
+                <option value="sky">Sky</option>
+                <option value="flamingo">Flamingo</option>
+                <option value="rosewater">Rosewater</option>
+                <option value="maroon">Maroon</option>
+            </select>
+        </div>
+        <header class="text-center mb-12">
+            <div class="flex items-center justify-center mb-4">
+                <h1 class="text-4xl md:text-5xl font-bold text-peach">Sekido Demo</h1>
+            </div>
+            <p class="text-subtext0 max-w-lg mx-auto">"迷えば、敗れる…" </br>       -Isshin Ashina</p>
+        </header>
+        <div class="grid md:grid-cols-1 gap-8">
+            <section class="card p-6">
+                <h2 class="text-2xl font-bold text-rosewater flex items-center mb-6" id="progressHeader">
+                    <span id="progressIcon" class="material-symbols-rounded mr-3"></span>
+                    <span id="progressTitle">Day Progress</span>
+                </h2>
+                <div class="relative">
+                    <div id="progressBar" class="h-5 rounded-full bg-surface2 overflow-hidden relative">
+                        <div id="progressFill" class="h-full w-full absolute top-0 left-0 overflow-hidden">
+                            <div id="progressGradient" class="h-full w-full absolute top-0 left-0 rounded-full"></div>
+                        </div>
+                    </div>
+                    <div id="progressText" class="text-center mt-2 text-subtext0"></div>
+                </div>
+            </section>
+            <section class="card p-6">
+                <div class="flex items-center justify-between mb-6">
+                    <h2 class="text-2xl font-bold text-rosewater flex items-center">
+                        <span class="material-symbols-rounded mr-3">checklist</span> My Tasks
+                    </h2>
+                    <button id="addTodoBtn" class="btn bg-peach hover:bg-[#e2946a] text-base font-bold px-4 py-2 rounded-full flex items-center pulse">
+                        <span class="material-symbols-rounded mr-2">add</span> Add Task
+                    </button>
+                </div>
+                
+                <div id="todoForm" class="hidden mb-6">
+                    <div class="flex flex-col sm:flex-row gap-2">
+                        <input 
+                            type="text" 
+                            id="newTodoInput" 
+                            placeholder="What do you need to do?"
+                            class="flex-1 bg-surface1 border border-overlay0 rounded-xl px-4 py-3 text-text focus:outline-none focus:ring-2 focus:ring-peach w-full"
+                        >
+                        <div class="flex gap-2">
+                            <button 
+                                id="saveTodoBtn"
+                                class="btn bg-green hover:bg-[#6d9355] text-base font-medium px-4 py-3 rounded-xl flex items-center flex-1 justify-center"
+                            >
+                                <span class="material-symbols-rounded mr-2">save</span> Save
+                            </button>
+                            <button 
+                                id="cancelTodoBtn"
+                                class="btn bg-red hover:bg-[#b33d3d] text-base font-medium px-4 py-3 rounded-xl flex items-center"
+                            >
+                                <span class="material-symbols-rounded">close</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <ul id="todoList" class="space-y-3">
+                </ul>
+            </section>
+            <section class="card p-6">
+                <h2 class="text-2xl font-bold text-rosewater mb-6 flex items-center">
+                    <span class="material-symbols-rounded mr-3">timeline</span> Habit Tracker
+                </h2>
+                
+                <div id="habitGrid" class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                </div>
+            </section>
+        </div>
+        
+        <footer class="mt-12 text-center text-subtext0 text-sm">
+            <p>Sekido - Licensed under <a href="https://www.gnu.org/licenses/gpl-3.0.html" target="_blank" class="text-peach hover:underline">GNU GPLv3</a></p>
+            <p class="mt-1">Made with ❤️ by <a href="https://github.com/sekiryl" target="_blank" class="text-peach hover:underline">sekiryl</a></p>
+        </footer>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/sortablejs@1.15.0/Sortable.min.js"></script>
+    <script src="themes.js"></script>
+    <script src="config.js"></script>
+    <script src="storage.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>

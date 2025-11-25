@@ -5,6 +5,8 @@
 
 A beautiful, customizable Progressive Web App for managing todos and tracking daily habits. Built with Cloudflare Workers and D1 database for lightning-fast performance and easy self-hosting.
 
+**🌐 [Live Demo](https://sekido-demo.pages.dev)** *(uses localStorage for demo purposes)*
+
 ## 📋 Table of Contents
 
 - [✨ Features](#-features)
@@ -14,7 +16,6 @@ A beautiful, customizable Progressive Web App for managing todos and tracking da
   - [Installation](#installation)
 - [🔄 Updating Sekido](#-updating-sekido)
 - [🌐 Custom Domain Setup](#-custom-domain-setup)
-  - [Using Cloudflare Dashboard](#using-cloudflare-dashboard)
 - [⚙️ Configuration](#️-configuration)
   - [🎨 Themes](#-themes)
   - [🎛️ Customization Options](#️-customization-options)
@@ -45,7 +46,7 @@ A beautiful, customizable Progressive Web App for managing todos and tracking da
 - 📊 **Day Progress Visualization** - Visual progress bar showing your day/night cycle
 - 🎨 **Various Stock Themes** - From Catppuccin to Gruvbox, Tokyo Night to Cyberpunk
 - 🎛️ **Fully Customizable** - Configure everything from colors to layout modules
-- 📱 **PWA Ready** - Install on mobile and desktop with offline support
+- 📱 **PWA Ready** - Install on mobile and desktop
 - 🔒 **Password Protected** - Simple authentication to keep your data private
 - ⚡ **Lightning Fast** - Built on Cloudflare's global edge network
 - 🌐 **Self-Hostable** - Own your data, deploy anywhere
@@ -146,8 +147,6 @@ $ wrangler deploy
 ```
 
 ## 🌐 Custom Domain Setup
-
-### Using Cloudflare Dashboard
 
 1. **Add your domain to Cloudflare**
    
